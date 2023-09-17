@@ -30,7 +30,7 @@ POST {{baseURL_auth}}/users
 Content-Type: application/json
 
 {
-    "email": "test2@test.com",
+    "email": "test3@test.com",
     "password": "Password123!"
 
 }
@@ -40,6 +40,9 @@ POST {{baseURL_auth}}/auth/login
 Content-Type: application/json
 
 {
-    "email": "test2@test.com",
+    "email": "test3@test.com",
     "password": "Password123!"
 }
+
+### Get user
+GET {{baseURL_auth}}/users
