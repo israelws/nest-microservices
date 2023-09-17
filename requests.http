@@ -1,21 +1,45 @@
-@baseURL = http://localhost:3000
+@baseURL_reservations = http://localhost:3000
+@baseURL_auth = http://localhost:3001
 
 ### Get all reservations 
-GET {{baseURL}}/reservations
+GET {{baseURL_reservations}}/reservations
 
 
 ### Get a reservation by id
-GET {{baseURL}}/reservations/6506afe2c18895da718bebd1 
+GET {{baseURL_reservations}}/reservations/6506afe2c18895da718bebd1 
 
 ### Create a reservation
-POST {{baseURL}}/reservations
+POST {{baseURL_reservations}}/reservations
 Content-Type: application/json
 
 {
-    "startDate": "21/12/2022",
-    "endDate": "31/12/2022",
+    "startDate": "12/10/2022",
+    "endDate": "12/12/2022",
     "invoiceId": "55555",
     "departureDate": "2021-01-05",
     "placeId": "5ff4e8b9c18895da718bebcf"
 
+}
+
+
+### Get all users
+GET {{baseURL_auth}}/users
+
+### Create a user
+POST {{baseURL_auth}}/users
+Content-Type: application/json
+
+{
+    "email": "test2@test.com",
+    "password": "Password123!"
+
+}
+
+### Login
+POST {{baseURL_auth}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "test2@test.com",
+    "password": "Password123!"
 }
