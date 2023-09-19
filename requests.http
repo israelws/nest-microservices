@@ -17,8 +17,15 @@ Content-Type: application/json
     "endDate": "12/12/2022",
     "invoiceId": "55555",
     "departureDate": "2021-01-05",
-    "placeId": "5ff4e8b9c18895da718bebcf"
-
+    "placeId": "5ff4e8b9c18895da718bebcf",
+    "charge": {
+        "amount": 100,
+        "card": {
+            "number": "4242424242424242",
+            "exp_month": 12,
+            "cvc": "123"
+        }
+    }
 }
 
 
