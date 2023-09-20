@@ -32,7 +32,17 @@ services:
     env_file:
       - ./apps/payments/.env
     volumes:
-      - .:/usr/src/app          
+      - .:/usr/src/app    
+  notifications:
+    build:
+      context: .
+      dockerfile: ./apps/notifications/Dockerfile
+      target: development
+    command: npm run start:dev notifications
+    env_file:
+      - ./apps/notifications/.env
+    volumes:
+      - .:/usr/src/app              
   mongo:
     image: mongo
    
