@@ -21,10 +21,26 @@ Content-Type: application/json
     "charge": {
         "amount": 100,
         "card": {
-            "number": "4242424242424242",
+            "number": "4242 4242 4242 4242",
             "exp_month": 12,
-            "cvc": "123"
+            "exp_year": 2027,
+            "cvc": 567
         }
+    }
+}
+
+### Create a reservation PCI
+POST {{baseURL_reservations}}/reservations
+Content-Type: application/json
+
+{
+    "startDate": "12/10/2022",
+    "endDate": "12/12/2022",
+    "invoiceId": "55555",
+    "departureDate": "2021-01-05",
+    "placeId": "5ff4e8b9c18895da718bebcf",
+    "charge": {
+        "amount": 100
     }
 }
 
