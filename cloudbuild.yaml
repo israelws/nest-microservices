@@ -1,0 +1,49 @@
+steps:
+  # auth
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      'build',
+      '-t',
+      'me-west1-docker.pkg.dev/sleepr-399710/auth/production',
+      '-f',
+      'apps/auth/Dockerfile',
+      '.'    
+    ]
+  - name: "gcr.io/cloud-builders/docker"
+    args: ['push', 'me-west1-docker.pkg.dev/sleepr-399710/auth/production']
+  # reservations  
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      'build',
+      '-t',
+      'me-west1-docker.pkg.dev/sleepr-399710/reservations/production',
+      '-f',
+      'apps/reservations/Dockerfile',
+      '.'    
+    ]
+  - name: "gcr.io/cloud-builders/docker"
+    args: ['push', 'me-west1-docker.pkg.dev/sleepr-399710/reservations/production']
+  # notifications  
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      'build',
+      '-t',
+      'me-west1-docker.pkg.dev/sleepr-399710/notifications/production',
+      '-f',
+      'apps/notifications/Dockerfile',
+      '.'    
+    ]
+  - name: "gcr.io/cloud-builders/docker"
+    args: ['push', 'me-west1-docker.pkg.dev/sleepr-399710/notifications/production']
+  # payments  
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      'build',
+      '-t',
+      'me-west1-docker.pkg.dev/sleepr-399710/payments/production',
+      '-f',
+      'apps/payments/Dockerfile',
+      '.'    
+    ]
+  - name: "gcr.io/cloud-builders/docker"
+    args: ['push', 'me-west1-docker.pkg.dev/sleepr-399710/payments/production']      
