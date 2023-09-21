@@ -5,6 +5,9 @@ import { NotifyEmailDto } from './dto/notify-email.dto';
 
 @Controller()
 export class NotificationsController {
+  getHello(): any {
+    return 'Hello World!';
+  }
   constructor(private readonly notificationsService: NotificationsService) {}
 
   @UsePipes(new ValidationPipe())

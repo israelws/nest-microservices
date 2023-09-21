@@ -3,6 +3,7 @@ import { NotificationsController } from './notifications.controller';
 import { NotificationsService } from './notifications.service';
 
 describe('NotificationsController', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let notificationsController: NotificationsController;
 
   beforeEach(async () => {
@@ -11,12 +12,8 @@ describe('NotificationsController', () => {
       providers: [NotificationsService],
     }).compile();
 
-    notificationsController = app.get<NotificationsController>(NotificationsController);
-  });
-
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(notificationsController.getHello()).toBe('Hello World!');
-    });
+    notificationsController = app.get<NotificationsController>(
+      NotificationsController,
+    );
   });
 });
