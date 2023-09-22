@@ -12,7 +12,7 @@ COPY nest-cli.json nest-cli.json
 COPY apps/reservations apps/reservations
 COPY libs libs
 
-RUN npm run build
+RUN npm run build reservations
 
 FROM node:alpine as production
 
