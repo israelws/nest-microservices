@@ -1,5 +1,8 @@
-@baseURL_reservations = http://localhost:3000
-@baseURL_auth = http://localhost:3001
+// @baseURL_reservations = http://localhost:3000
+
+@baseURL_auth = http://34.111.189.217
+
+@baseURL_reservations = http://34.111.189.217
 
 ### Get all reservations 
 GET {{baseURL_reservations}}/reservations
@@ -69,3 +72,6 @@ Content-Type: application/json
 
 ### Get user
 GET {{baseURL_auth}}/users
+
+### Get health
+GET {{baseURL_auth}}/
