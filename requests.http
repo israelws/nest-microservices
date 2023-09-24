@@ -5,14 +5,14 @@
 @baseURL_reservations = http://34.111.189.217
 
 ### Get all reservations 
-GET {{baseURL_reservations}}/reservations
+GET http://34.111.189.217/reservations/
 
 
 ### Get a reservation by id
 GET {{baseURL_reservations}}/reservations/6506afe2c18895da718bebd1 
 
 ### Create a reservation
-POST {{baseURL_reservations}}/reservations
+POST http://34.111.189.217/reservations/
 Content-Type: application/json
 
 {
@@ -56,7 +56,7 @@ POST {{baseURL_auth}}/users
 Content-Type: application/json
 
 {
-    "email": "test3@test.com",
+    "email": "test6@test.com",
     "password": "Password123!"
 
 }

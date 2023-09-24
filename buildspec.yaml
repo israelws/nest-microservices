@@ -1,0 +1,34 @@
+# AWS CI CD SPEC
+# https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
+# https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html
+# https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker-custom-image.html
+
+version: 0.2
+pre_build:
+  commands:
+    - aws ecr get-login-password --region il-central-1 | docker login --username AWS --password-stdin 614679607310.dkr.ecr.il-central-1.amazonaws.com
+    - echo Logging in to Amazon ECR...
+buid:
+  commands:
+    - docker build -t reservations -f ./apps/reservations/Dockerfile .
+    - docker tag reservations:latest 614679607310.dkr.ecr.il-central-1.amazonaws.com/reservations:latest
+
+    - docker build -t auth -f ./apps/auth/Dockerfile .
+    - docker tag auth:latest 614679607310.dkr.ecr.il-central-1.amazonaws.com/auth:latest
+
+    - docker build -t notifications -f ./apps/notifications/Dockerfile .
+    - docker tag notifications:latest 614679607310.dkr.ecr.il-central-1.amazonaws.com/notifications:latest
+
+    - docker build -t payments -f ./apps/payments/Dockerfile .
+    - docker tag payments:latest 614679607310.dkr.ecr.il-central-1.amazonaws.com/payments:latest
+  post_build:
+    commands:
+      - docker push 614679607310.dkr.ecr.il-central-1.amazonaws.com/reservations:latest
+      - docker push 614679607310.dkr.ecr.il-central-1.amazonaws.com/auth:latest
+      - docker push 614679607310.dkr.ecr.il-central-1.amazonaws.com/notifications:latest
+      - docker push 614679607310.dkr.ecr.il-central-1.amazonaws.com/payments:latest
+
+
+
+
+   
