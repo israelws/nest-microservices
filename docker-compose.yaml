@@ -42,6 +42,11 @@ services:
     env_file:
       - ./apps/notifications/.env
     volumes:
-      - .:/usr/src/app              
+      - .:/usr/src/app  
+  rabbitmq:
+    image: rabbitmq
+    ports:
+      - '5672:5672'
+                
 
    

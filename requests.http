@@ -45,10 +45,10 @@ POST {{baseURL_auth}}/users
 Content-Type: application/json
 
 {
-    "email": "test18@test.com",
+    "email": "test19@test.com",
     "password": "Password123!",
     "roles": [
-        "User"
+        "Admin"
     ]
 }
 
@@ -57,7 +57,7 @@ POST {{baseURL_auth}}/auth/login
 Content-Type: application/json
 
 {
-    "email": "test5@test.com",
+    "email": "test19@test.com",
     "password": "Password123!"
 }
 
