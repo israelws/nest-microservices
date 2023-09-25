@@ -43,6 +43,5 @@ services:
       - ./apps/notifications/.env
     volumes:
       - .:/usr/src/app              
-  mongo:
-    image: mongo
+
    

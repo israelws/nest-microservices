@@ -1,18 +1,23 @@
 // @baseURL_reservations = http://localhost:3000
 
-@baseURL_auth = http://34.111.189.217
+// LOCAL
+@baseURL_auth = http://localhost:3001
+@baseURL_reservations = http://localhost:3000
 
-@baseURL_reservations = http://34.111.189.217
+// GCP
+// @baseURL_auth = http://34.111.189.217/
+// @baseURL_reservations = http://34.111.189.217/
+
 
 ### Get all reservations 
-GET http://34.111.189.217/reservations/
+GET {{baseURL_reservations}}/reservations
 
 
 ### Get a reservation by id
 GET {{baseURL_reservations}}/reservations/6506afe2c18895da718bebd1 
 
 ### Create a reservation
-POST http://34.111.189.217/reservations/
+POST {{baseURL_reservations}}/reservations
 Content-Type: application/json
 
 {
@@ -32,22 +37,6 @@ Content-Type: application/json
     }
 }
 
-### Create a reservation PCI
-POST {{baseURL_reservations}}/reservations
-Content-Type: application/json
-
-{
-    "startDate": "12/10/2022",
-    "endDate": "12/12/2022",
-    "invoiceId": "55555",
-    "departureDate": "2021-01-05",
-    "placeId": "5ff4e8b9c18895da718bebcf",
-    "charge": {
-        "amount": 100
-    }
-}
-
-
 ### Get all users
 GET {{baseURL_auth}}/users
 
@@ -56,9 +45,11 @@ POST {{baseURL_auth}}/users
 Content-Type: application/json
 
 {
-    "email": "test6@test.com",
-    "password": "Password123!"
-
+    "email": "test18@test.com",
+    "password": "Password123!",
+    "roles": [
+        "User"
+    ]
 }
 
 ### Login
@@ -66,7 +57,7 @@ POST {{baseURL_auth}}/auth/login
 Content-Type: application/json
 
 {
-    "email": "test3@test.com",
+    "email": "test5@test.com",
     "password": "Password123!"
 }
 
