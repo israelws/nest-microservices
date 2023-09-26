@@ -1,23 +1,23 @@
 // @baseURL_reservations = http://localhost:3000
 
 // LOCAL
-@baseURL_auth = http://localhost:3001
-@baseURL_reservations = http://localhost:3000
+// @baseURL_auth = http://localhost:3001
+// @baseURL_reservations = http://localhost:3000
 
 // GCP
-// @baseURL_auth = http://34.111.189.217/
-// @baseURL_reservations = http://34.111.189.217/
+@baseURL_auth = http://34.111.114.178
+@baseURL_reservations = http://34.111.114.178
 
 
 ### Get all reservations 
-GET {{baseURL_reservations}}/reservations
+GET {{baseURL_reservations}}/reservations/
 
 
 ### Get a reservation by id
 GET {{baseURL_reservations}}/reservations/6506afe2c18895da718bebd1 
 
 ### Create a reservation
-POST {{baseURL_reservations}}/reservations
+POST http://34.111.114.178/reservations/
 Content-Type: application/json
 
 {
@@ -45,7 +45,7 @@ POST {{baseURL_auth}}/users
 Content-Type: application/json
 
 {
-    "email": "test19@test.com",
+    "email": "test21@test.com",
     "password": "Password123!",
     "roles": [
         "Admin"
@@ -53,11 +53,11 @@ Content-Type: application/json
 }
 
 ### Login
-POST {{baseURL_auth}}/auth/login
+POST {{baseURL_auth}}/auth/login/
 Content-Type: application/json
 
 {
-    "email": "test19@test.com",
+    "email": "test20@test.com",
     "password": "Password123!"
 }
 

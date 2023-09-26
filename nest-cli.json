@@ -52,6 +52,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/notifications/tsconfig.app.json"
       }
+    },
+    "fhir": {
+      "type": "library",
+      "root": "libs/fhir",
+      "entryFile": "index",
+      "sourceRoot": "libs/fhir/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/fhir/tsconfig.lib.json"
+      }
     }
   },
   "monorepo": true,

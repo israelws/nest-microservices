@@ -5,9 +5,13 @@ import { Logger } from 'nestjs-pino/Logger';
 import { ConfigService } from '@nestjs/config';
 import * as cookieParser from 'cookie-parser';
 import { Transport } from '@nestjs/microservices';
+import { swagger } from '@app/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AuthModule);
+
+  swagger(app, 'Auth Service', 'Auth Service', '1.0', 'auth');
+
   const configService = app.get(ConfigService);
   app.connectMicroservice({
     transport: Transport.RMQ,

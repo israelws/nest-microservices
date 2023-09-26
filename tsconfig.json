@@ -23,6 +23,12 @@
       ],
       "@app/common/*": [
         "libs/common/src/*"
+      ],
+      "@app/fhir": [
+        "libs/fhir/src"
+      ],
+      "@app/fhir/*": [
+        "libs/fhir/src/*"
       ]
     }
   }

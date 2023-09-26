@@ -29,6 +29,7 @@
     "@nestjs/mongoose": "^10.0.1",
     "@nestjs/passport": "^10.0.2",
     "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/swagger": "^7.1.12",
     "@types/bcryptjs": "^2.4.4",
     "@types/cookie-parser": "^1.4.4",
     "amqp-connection-manager": "^4.1.14",
@@ -96,7 +97,8 @@
       "<rootDir>/apps/"
     ],
     "moduleNameMapper": {
-      "^@app/common(|/.*)$": "<rootDir>/libs/common/src/$1"
+      "^@app/common(|/.*)$": "<rootDir>/libs/common/src/$1",
+      "^@app/fhir(|/.*)$": "<rootDir>/libs/fhir/src/$1"
     }
   }
 }
