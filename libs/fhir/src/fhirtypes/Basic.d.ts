@@ -23,7 +23,6 @@ import { Resource } from './Resource';
  * specification.
  */
 export interface Basic {
-
   /**
    * This is a Basic resource
    */
@@ -126,5 +125,7 @@ export interface Basic {
   /**
    * Indicates who was responsible for creating the resource instance.
    */
-  author?: Reference<Practitioner | PractitionerRole | Patient | RelatedPerson | Organization>;
+  author?: Reference<
+    Practitioner | PractitionerRole | Patient | RelatedPerson | Organization
+  >;
 }

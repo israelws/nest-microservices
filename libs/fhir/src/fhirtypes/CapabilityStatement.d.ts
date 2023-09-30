@@ -252,7 +252,17 @@ export interface CapabilityStatement {
    * describes (which SHALL be the same as the FHIR version of the
    * CapabilityStatement itself). There is no default value.
    */
-  fhirVersion?: '0.01' | '0.05' | '0.06' | '0.11' | '0.0.80' | '0.0.81' | '0.0.82' | '0.4.0' | '0.5.0' | '1.0.0' |
+  fhirVersion?:
+    | '0.01'
+    | '0.05'
+    | '0.06'
+    | '0.11'
+    | '0.0.80'
+    | '0.0.81'
+    | '0.0.82'
+    | '0.4.0'
+    | '0.5.0'
+    | '1.0.0'
       '1.0.1' | '1.0.2' | '1.1.0' | '1.4.0' | '1.6.0' | '1.8.0' | '3.0.0' | '3.0.1' | '3.3.0' | '3.5.0' | '4.0.0' | '4.0.1';
 
   /**

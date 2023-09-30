@@ -2,10 +2,7 @@ import { Module } from '@nestjs/common';
 import { ReservationsService } from './reservations.service';
 import { ReservationsController } from './reservations.controller';
 import { ReservationsRepository } from './reservations.repository';
-import {
-  ReservationDocument,
-  ReservationSchema,
-} from './models/reservation.schema';
+import { Reservation } from './models/reservation.entity';
 import {
   LoggerModule,
   DatabaseModule,
@@ -21,12 +18,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 @Module({
   imports: [
     DatabaseModule,
-    DatabaseModule.forFeature([
-      {
-        name: ReservationDocument.name,
-        schema: ReservationSchema,
-      },
-    ]),
+    DatabaseModule.forFeature([Reservation]),
     LoggerModule,
     ConfigModule.forRoot({
       isGlobal: true,

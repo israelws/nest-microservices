@@ -1,12 +1,12 @@
 // @baseURL_reservations = http://localhost:3000
 
 // LOCAL
-// @baseURL_auth = http://localhost:3001
-// @baseURL_reservations = http://localhost:3000
+@baseURL_auth = http://localhost:3001
+@baseURL_reservations = http://localhost:3000
 
 // GCP
-@baseURL_auth = http://34.111.114.178
-@baseURL_reservations = http://34.111.114.178
+// @baseURL_auth = http://34.111.114.178
+// @baseURL_reservations = http://34.111.114.178
 
 
 ### Get all reservations 
@@ -45,11 +45,11 @@ POST {{baseURL_auth}}/users
 Content-Type: application/json
 
 {
-    "email": "test21@test.com",
+    "email": "test35@test.com",
     "password": "Password123!",
-    "roles": [
-        "Admin"
-    ]
+    "roles": [{
+        "name": "Admin"
+    }]
 }
 
 ### Login
